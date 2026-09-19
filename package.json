@@ -1,0 +1,39 @@
+{
+  "name": "arentoria-dm-city-database",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "map:prepare": "node scripts/prepare-map.mjs",
+    "import:check": "node scripts/import-sources.mjs --dry-run",
+    "import": "node scripts/import-sources.mjs",
+    "data:prepare": "npm run map:prepare && npm run import"
+  },
+  "engines": {
+    "node": ">=20.9"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "drizzle-orm": "^0.45.2",
+    "next": "^16.3.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "read-excel-file": "^9.3.10",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.3.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.2",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.11"
+  }
+}

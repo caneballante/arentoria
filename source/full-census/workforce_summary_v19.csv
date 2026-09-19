@@ -1,0 +1,21 @@
+Metric,Count
+Permanent residents,10000
+Mapped establishments,721
+Establishment leads,721
+Non-lead staff assigned,3118
+Total people attached to mapped workplaces,3839
+Residents not assigned to a mapped establishment,6161
+Explicit household relationship edges,6004
+Family members employed by proprietor/lead,205
+Businesses employing proprietor/lead family,183
+Same-building work commutes,1409
+Same-street work commutes,1675
+Same-district work commutes,622
+Cross-district work commutes,133
+Human census total,8100
+Dwarf census total,800
+Halfling census total,500
+Rabbit-folk census total,200
+Lizardfolk census total,200
+Other / rare census total,200
+Humans with lizardfolk heritage,243

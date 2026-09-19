@@ -1,0 +1,131 @@
+Road_ID,Road_Name,Name_Source,Previous_Review_Label,Marker_X,Marker_Y,Generation_Zone
+ROAD-001,Caravan Road,existing,Caravan Road (?),363.63,1575.73,
+ROAD-002,Saffron Street,generated,[NAME / MATCH NEEDED],782.79,1249.66,lower-mid
+ROAD-003,Seal Court,existing,Seal Court,1184.93,972.92,
+ROAD-004,Crownreach Boulevard,existing,Crownreach Boulevard,1147.22,1183.88,
+ROAD-005,Selenic Walk,existing,Selenic Walk,1137.78,1224.78,
+ROAD-006,Dawnfire Promenade,existing,Dawnfire Promenade (?),1103.58,1245.4,
+ROAD-007,Guild Row,existing,Guild Row,978.88,1264.06,
+ROAD-008,Market Cross,existing,Market Cross,978.95,1152.76,
+ROAD-009,Ironbell Road,existing,Ironbell Road,1002.45,1211.86,
+ROAD-010,Spice Row,existing,Spice Row,989.58,932.1,
+ROAD-011,Potters' Track,existing,Potters' Track (?),1116.6,1140.45,
+ROAD-012,Caravaner's Row,existing,Caravaner's Row (?),844.29,1093.38,
+ROAD-013,Eight-Star Stair,existing,Eight-Star Stair,756.29,943.23,
+ROAD-014,Pilgrim's Hollow Lane,existing,Pilgrim's Hollow Lane,864.51,968.47,
+ROAD-015,Velvet Court Lane,existing,Velvet Court Lane (?),1266.65,1119.59,
+ROAD-016,Laurel Walk,existing,Laurel Walk (?),1262.9,974.74,
+ROAD-017,Amberlight Street,existing,Amberlight Street,1271.93,1046.91,
+ROAD-018,Starfall Avenue,existing,Starfall Avenue (?),1038.26,979.84,
+ROAD-019,Bread Street,existing,Bread Street (?),1258.52,1148.66,
+ROAD-020,Tinker's Hollow,existing,Tinker's Hollow,1046.51,916.4,
+ROAD-021,Embassy Row,existing,Embassy Row,1226.78,1101.16,
+ROAD-022,Councilor's Walk,existing,Councilor's Walk,1144.14,1021.88,
+ROAD-023,Astronomer's Close,existing,Astronomer's Close,1122.48,1455.91,
+ROAD-024,Cooper's Lane,existing,Cooper's Lane,927.2,1423.25,
+ROAD-025,Apprentice Way,existing,Apprentice Way (?),837.54,1271.27,
+ROAD-026,Bellglass Way,existing,Bellglass Way (?),910.55,1320.07,
+ROAD-027,Cobbler's Way,existing,Cobbler's Way,1099.26,1422.18,
+ROAD-028,Redbrick Row,existing,Redbrick Row,1206.46,1325.24,
+ROAD-029,Hearthside Row,generated,[NAME / MATCH NEEDED],1176.52,1437.96,south
+ROAD-030,Scholar's Stair,existing,Scholar's Stair,1053.46,1507.04,
+ROAD-031,Cloister Street,existing,Cloister Street,1114.86,1354.6,
+ROAD-032,Feather Court,generated,[NAME / MATCH NEEDED],1341.92,1305.04,lower-mid
+ROAD-033,Quill Lane,existing,Quill Lane (?),1187.61,1380.25,
+ROAD-034,Ravenshade Way,generated,[NAME / MATCH NEEDED],1301.86,1300.88,lower-mid
+ROAD-035,Washhouse Lane,existing,Washhouse Lane (?),1308.56,1359.08,
+ROAD-036,Cinder Court,generated,[NAME / MATCH NEEDED],1203.0,1428.74,south
+ROAD-037,Oatmarket Lane,generated,[NAME / MATCH NEEDED],1270.28,1331.2,lower-mid
+ROAD-038,Dyer's Lane,generated,[NAME / MATCH NEEDED],754.82,1202.28,lower-mid
+ROAD-039,Oldback Steps,existing,Oldback Steps (?),685.54,975.63,
+ROAD-040,Awning Street,existing,Awning Street,821.62,1123.68,
+ROAD-041,Glassmaker's Row,generated,[NAME / MATCH NEEDED],758.73,1112.09,lower-mid
+ROAD-042,Falconwatch Terrace,existing,Falconwatch Terrace,682.04,1061.67,
+ROAD-043,Bastion Lane,existing,Bastion Lane,739.34,997.64,
+ROAD-044,Street of Aelvarn,existing,Street of Aelvarn,750.45,1053.49,
+ROAD-045,Brickmaker's Court,existing,Brickmaker's Court,1404.11,1216.83,
+ROAD-046,Greenbottle Lane,generated,[NAME / MATCH NEEDED],1388.02,1247.3,lower-mid
+ROAD-047,Bramble Way,generated,[NAME / MATCH NEEDED],1089.82,1521.62,south
+ROAD-048,Rillstone Lane,generated,[NAME / MATCH NEEDED],1078.12,1508.36,south
+ROAD-049,Ledger Lane,generated,[NAME / MATCH NEEDED],1435.17,904.42,upper-mid
+ROAD-050,Quarry Gate,generated,[NAME / MATCH NEEDED],1013.78,584.69,north
+ROAD-051,Ivory Walk,generated,[NAME / MATCH NEEDED],622.64,1071.58,upper-mid
+ROAD-052,South Road,existing,South Road (?),575.7,1171.19,
+ROAD-053,Harrow Court,generated,[NAME / MATCH NEEDED],726.1,1641.02,south
+ROAD-054,Briarcart Lane,generated,[NAME / MATCH NEEDED],608.02,744.8,north
+ROAD-055,Kiln Track,existing,Kiln Track,706.98,776.83,
+ROAD-056,Vellum Walk,generated,[NAME / MATCH NEEDED],591.79,872.38,upper-mid
+ROAD-057,Newcomer's Way,existing,Newcomer's Way,1449.59,1419.48,
+ROAD-058,Lattice Walk,generated,[NAME / MATCH NEEDED],1490.67,1209.83,lower-mid
+ROAD-059,Reedbank Row,existing,Reedbank Row,1504.42,1279.73,
+ROAD-060,Eastgate Road,existing,Eastgate Road,1465.84,1097.53,
+ROAD-061,Pennybright Street,generated,[NAME / MATCH NEEDED],1448.55,1026.7,upper-mid
+ROAD-062,Willow Lane,existing,Willow Lane,1407.78,847.13,
+ROAD-063,Stockman's Lane,existing,Stockman's Lane,1387.08,999.45,
+ROAD-064,Loom Court,generated,[NAME / MATCH NEEDED],1384.62,969.08,upper-mid
+ROAD-065,Reedgate Road,existing,Reedgate Road,1368.5,924.3,
+ROAD-066,Oxbow Street,generated,[NAME / MATCH NEEDED],698.32,1598.55,south
+ROAD-067,Long Mile Lane,existing,Long Mile Lane,646.17,1390.56,
+ROAD-068,Low Arch Way,existing,Low Arch Way (?),799.62,1614.66,
+ROAD-070,Black Candle Row,existing,Black Candle Row,758.46,1549.29,
+ROAD-071,Rainbarrel Lane,generated,[NAME / MATCH NEEDED],598.31,1467.53,south
+ROAD-073,Broken Arch Street,generated,[NAME / MATCH NEEDED],629.09,1430.28,south
+ROAD-074,Mercer Street,generated,[NAME / MATCH NEEDED],533.26,1146.86,lower-mid
+ROAD-075,Piper's Walk,generated,[NAME / MATCH NEEDED],554.17,1373.21,lower-mid
+ROAD-076,Masons' Row,generated,[NAME / MATCH NEEDED],560.16,1324.04,lower-mid
+ROAD-077,Miller's Rise,generated,[NAME / MATCH NEEDED],645.78,673.16,north
+ROAD-079,Farmer's Spur,existing,Farmer's Spur (?),1538.98,932.55,
+ROAD-080,Chisel Street,generated,[NAME / MATCH NEEDED],1322.27,739.54,north
+ROAD-081,Threadmarket Way,generated,[NAME / MATCH NEEDED],1590.12,1073.25,upper-mid
+ROAD-082,Moonmint Lane,generated,[NAME / MATCH NEEDED],1162.13,806.07,upper-mid
+ROAD-084,Gateward Street,existing,Gateward Street (?),1518.68,978.45,
+ROAD-085,Seralienne Way,existing,Seralienne Way (?),1221.61,806.07,
+ROAD-088,North Road,existing,North Road,1219.98,784.62,
+ROAD-089,Tanners' Run,generated,[NAME / MATCH NEEDED],987.78,649.48,north
+ROAD-090,Bone Yard Lane,existing,Bone Yard Lane (?),897.56,627.66,
+ROAD-091,Cherrytorn Road,existing,Cherrytorn Road (?),1344.1,645.76,
+ROAD-092,Wainwright Way,generated,[NAME / MATCH NEEDED],1262.57,781.32,north
+ROAD-094,Bonehook Way,generated,[NAME / MATCH NEEDED],937.87,690.07,north
+ROAD-095,Kilnfield Street,generated,[NAME / MATCH NEEDED],1034.7,656.86,north
+ROAD-097,Watchpost Walk,generated,[NAME / MATCH NEEDED],1127.78,662.64,north
+ROAD-098,Ministry Row,existing,Ministry Row (?),1045.42,840.13,
+ROAD-101,Paddock Road,generated,[NAME / MATCH NEEDED],1099.39,686.57,north
+ROAD-102,Coppershade Lane,generated,[NAME / MATCH NEEDED],522.81,844.61,upper-mid
+ROAD-103,Turnwheel Lane,generated,[NAME / MATCH NEEDED],449.33,1051.68,upper-mid
+ROAD-104,Lanthorn Lane,generated,[NAME / MATCH NEEDED],449.86,1311.24,lower-mid
+ROAD-106,Cloak Alley,generated,[NAME / MATCH NEEDED],1344.46,1495.17,south
+ROAD-107,Ragpicker Lane,generated,[NAME / MATCH NEEDED],1564.12,1424.41,south
+ROAD-108,Bellfoundry Close,generated,[NAME / MATCH NEEDED],1626.22,904.49,upper-mid
+ROAD-109,Rookery Lane,generated,[NAME / MATCH NEEDED],1477.78,725.26,north
+ROAD-111,Northwatch Way,generated,[NAME / MATCH NEEDED],1122.24,493.49,north
+ROAD-112,Drover's Road,existing,Drover's Road,880.61,565.67,
+ROAD-113,Wellcourt Lane,generated,[NAME / MATCH NEEDED],1707.68,1081.5,upper-mid
+ROAD-114,Mossgate Walk,generated,[NAME / MATCH NEEDED],522.74,1476.26,south
+ROAD-115,Cartyard Lane,generated,[NAME / MATCH NEEDED],472.42,657.66,north
+ROAD-116,Tern Street,generated,[NAME / MATCH NEEDED],739.95,1733.62,south
+ROAD-117,Ember Lane,existing,Ember Lane,686.63,1923.34,
+ROAD-118,Copper Measure Lane,existing,Copper Measure Lane,1034.53,1097.98,
+ROAD-119,Kettle Court,generated,[NAME / MATCH NEEDED],1203.86,1228.08,lower-mid
+ROAD-120,Hideworkers' Lane,existing,Hideworkers' Lane,508.44,394.42,
+ROAD-121,Tallow Street,existing,Tallow Street (?),219.22,857.72,
+NEW-01,Stable Row,existing,Stable Row,560.16,1055.49,
+NEW-02,Scribe's Passage,generated,[NAME / MATCH NEEDED],590.08,1021.88,upper-mid
+NEW-03,Rosewater Row,generated,[NAME / MATCH NEEDED],543.5,978.85,upper-mid
+NEW-04,King's Mile,existing,King's Mile,601.16,919.42,
+NEW-05,Needle Court,generated,[NAME / MATCH NEEDED],636.14,848.2,upper-mid
+NEW-06,Hammer Street,existing,Hammer Street (?),701.32,1178.56,
+NEW-07,Wagoner's Way,existing,Wagoner's Way,746.34,1358.94,
+NEW-08,Weaver's Cut,existing,Weaver's Cut,843.68,1215.87,
+NEW-09,Brassfounders' Way,existing,Brassfounders' Way,817.56,1339.17,
+NEW-10,Lantern Loop,existing,Lantern Loop,1182.48,1073.25,
+NEW-11,Underwall Passage,existing,Underwall Passage (?),827.04,1473.25,
+NEW-12,Southwall Way,generated,[NAME / MATCH NEEDED],780.79,1418.13,south
+NEW-13,Three Wells Lane,existing,Three Wells Lane,1348.05,1382.25,
+NEW-14,New Hearth Lane,existing,New Hearth Lane,1268.07,875.16,
+NEW-15,Silvergate Terrace,existing,Silvergate Terrace,1318.84,1016.08,
+NEW-16,Petitioners' Lane,existing,Petitioners' Lane,961.86,1042.82,
+NEW-17,Street of Lanterns,existing,Street of Lanterns,1258.9,1440.96,
+NEW-18,Pearl Street,generated,[NAME / MATCH NEEDED],994.86,873.01,upper-mid
+NEW-19,Stoneback Road,existing,Stoneback Road,946.74,853.13,
+NEW-20,Dripstone Alley,existing,Dripstone Alley,790.1,1502.04,
+NEW-21,Whisper Lane,existing,Whisper Lane,667.69,1475.25,

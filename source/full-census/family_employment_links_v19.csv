@@ -1,0 +1,206 @@
+Workplace_AR_ID,Workplace_Name,Workplace_Address,Lead_Person_ID,Lead_Name,Family_Employee_Person_ID,Family_Employee_Name,Relationship_to_Lead,Employee_Role,Shared_Household_ID,Shared_Home_Address
+AR-1575,The Blue Lyre,1 Piper's Walk,P-06313,Cora Hilltop,P-06315,Tomas Dennet,household relative,performer,HH-1598-01,11 Piper's Walk
+AR-0605,Guildhall of Smiths,19 Dawnfire Promenade,P-02088,Fara Tanner,P-02092,Davra Thorn,ward / foster child,messenger,HH-0605-01,19 Dawnfire Promenade
+AR-0541,Hop Crown Brewery,19 Ironbell Road,P-02294,Derrin Ordel,P-02297,Marek Ordel,child,brewer,HH-0671-01,11 Hammer Street
+AR-1031,The Gilded Curtain,7 Wellcourt Lane,P-03400,Celia Nairn,P-03399,Alden Vell,spouse / partner,performer,HH-1031-01,7 Wellcourt Lane
+AR-1656,Brewer's Star Brewery,3 Caravan Road,P-05532,Vera Marnel,P-05531,Jorin Torr,spouse / partner,brewer,HH-1468-01,2 Kiln Track
+AR-0508,Three Roads Trading House,10 Awning Street,P-01778,Garran Berrow,P-01781,Torren Harrowell,ward / foster child,warehouse clerk,HH-0502-01,15 Awning Street
+AR-0508,Three Roads Trading House,10 Awning Street,P-01778,Garran Berrow,P-01780,Ysra Dennet,cousin by marriage,tally clerk,HH-0502-01,15 Awning Street
+AR-0535,Stonemasons' Guild,3 Ironbell Road,P-01851,Jessa Perrick,P-01850,Varr Reedtail,household relative,guild clerk,HH-0535-01,3 Ironbell Road
+AR-0535,Stonemasons' Guild,3 Ironbell Road,P-01851,Jessa Perrick,P-01848,Zhara Marshscale,household relative,registrar,HH-0535-01,3 Ironbell Road
+AR-0535,Stonemasons' Guild,3 Ironbell Road,P-01851,Jessa Perrick,P-01846,Tesh Reedtail,parent / older relative,steward,HH-0535-01,3 Ironbell Road
+AR-0595,Guildhall of Chandlers,9 Guild Row,P-02013,Grislan Redforge,P-02016,Varrik Flintmantle,household relative,registrar,HH-0595-01,9 Guild Row
+AR-0595,Guildhall of Chandlers,9 Guild Row,P-02013,Grislan Redforge,P-02014,Dain Flintmantle,household relative,steward,HH-0595-01,9 Guild Row
+AR-0766,Black Trading House,3 Glassmaker's Row,P-02537,Selka Pell,P-02538,Ilyra Morrow,spouse / partner,buyer's assistant,HH-0766-01,3 Glassmaker's Row
+AR-1297,The Laughing Bell,36 Ember Lane,P-04840,Orrel Dunnet,P-04842,Ari Willow,household relative,performer,HH-1274-01,25 Ember Lane
+AR-0416,The Silver Loom,8 Washhouse Lane,P-01445,Rhea Casker,P-01448,Willa Casker,sibling,inn clerk,HH-0417-01,10 Washhouse Lane
+AR-0453,Malt House Brewery,5 Ravenshade Way,P-01635,Sera Norr,P-01633,Naren Thorn,household relative,brewer,HH-0453-01,5 Ravenshade Way
+AR-0492,Blue Mill,41 Hammer Street,P-01729,Garran Bell,P-01728,Wren Pell,spouse / partner,assistant,HH-0492-01,41 Hammer Street
+AR-0492,Blue Mill,41 Hammer Street,P-01729,Garran Bell,P-01731,Hale Pell,child / dependent,runner,HH-0492-01,41 Hammer Street
+AR-0600,Fox & Hare,12 Guild Row,P-02042,Avela Quill,P-02045,Naren Sable,parent-in-law,inn clerk,HH-0600-01,12 Guild Row
+AR-0600,Fox & Hare,12 Guild Row,P-02042,Avela Quill,P-02049,Ilyra Sable,stepchild,server,HH-0600-01,12 Guild Row
+AR-0782,Woven Star & Three Spindles,10 Petitioners' Lane,P-05325,Cedren Fenwick,P-05321,Aren Fenwick,household relative,inn clerk,HH-1437-01,14 Miller's Rise
+AR-0961,The Iron Block,9 Farmer's Spur,P-03042,Lorin Harrowell,P-03044,Ansel Fenn,sibling-in-law,slaughter hand,HH-0969-01,22 Farmer's Spur
+AR-1129,The Foreign Seal,10 Cloak Alley,P-01607,Celia Yarrow,P-01608,Ilyra Yarrow,niece / nephew,warehouse clerk,HH-0450-02,2 Ravenshade Way
+AR-1508,The Three Globes,4 Ledger Lane,P-05708,Calder Vellis,P-05707,Elira Sable,spouse / partner,runner,HH-1508-01,4 Ledger Lane
+AR-1591,The Black Crown,2 Masons' Row,P-05917,Ysra Sable,P-05921,Elira Sable,cousin,assistant,HH-1529-01,10 Cherrytorn Road
+AR-1602,Crowned Alehouse,7 Piper's Walk,P-06335,Sera Dain,P-06334,Tessa Ward,spouse / partner,taproom server,HH-1602-01,7 Piper's Walk
+AR-1612,Charcoal Mound & Smoke Yard,6 Long Mile Lane,P-06182,Celia Thorn,P-06184,Elian Thorn,household relative,kiln worker,HH-1581-02,25 Wagoner's Way
+AR-1669,The Road Crown,4 Rainbarrel Lane,P-06228,Hob Briarbell,P-06230,Ilyra Brindle,aunt / uncle by marriage,teamster,HH-1584-02,31 Wagoner's Way
+AR-0277,Blue Steam Baths,26 Astronomer's Close,P-00615,Brann Sable,P-00618,Edrin Ward,household relative,assistant,HH-0277-01,26 Astronomer's Close
+AR-0277,Blue Steam Baths,26 Astronomer's Close,P-00615,Brann Sable,P-00617,Wren Casker,household relative,clerk,HH-0277-01,26 Astronomer's Close
+AR-0277,Blue Steam Baths,26 Astronomer's Close,P-00615,Brann Sable,P-00616,Perrin Ward,household relative,laborer,HH-0277-01,26 Astronomer's Close
+AR-0277,Blue Steam Baths,26 Astronomer's Close,P-00615,Brann Sable,P-00614,Marek Ward,spouse / partner,runner,HH-0277-01,26 Astronomer's Close
+AR-0491,The White Bell,12 Bramble Way,P-01726,Kael Elver,P-01725,Elise Eld,spouse / partner,taproom server,HH-0491-01,12 Bramble Way
+AR-0491,The White Bell,12 Bramble Way,P-01726,Kael Elver,P-01727,Mira Eld,household relative,cook,HH-0491-01,12 Bramble Way
+AR-0494,The Hop Crown,4 Falconwatch Terrace,P-01745,Rhea Carrow,P-01747,Cedren Kell,sibling-in-law,brewer,HH-0494-01,4 Falconwatch Terrace
+AR-0534,Mercenaries' Hall of the Brazen Banner,6 Ironbell Road,P-05679,Davra Rath,P-05682,Ysra Rath,household relative,guild clerk,HH-1504-01,7 Willow Lane
+AR-0534,Mercenaries' Hall of the Brazen Banner,6 Ironbell Road,P-05679,Davra Rath,P-05678,Kael Rath,spouse / partner,registrar,HH-1504-01,7 Willow Lane
+AR-0964,Ivory Alehouse,14 Wellcourt Lane,P-03028,Merrit Berrow,P-03029,Tomas Vell,sibling-in-law,taproom server,HH-0964-01,14 Wellcourt Lane
+AR-1160,The Red Crown,6 Wagoner's Way,P-04020,Merrit Marnel,P-04018,Fen Quickettle,landlord / household host,assistant,HH-1160-01,6 Wagoner's Way
+AR-1180,The Broken Sparrow,19 Underwall Passage,P-02933,Fennick Twiddle,P-02932,Zara Ashglint,spouse / partner,taproom server,HH-0944-02,17 Eastgate Road
+AR-1221,Glass Bell & Glass Star,10 Ember Lane,P-04420,Lena Penton,P-04418,Alis Vellis,landlord / household host,assistant,HH-1215-01,3 Ember Lane
+AR-1309,The Rinsing Stone,16 Hideworkers' Lane,P-05042,Calder Marel,P-05039,Ansel Fenwick,parent / older relative,washer,HH-1383-01,2 Hideworkers' Lane
+AR-1336,Tallow Yard Rendering Works,14 Quarry Gate,P-04262,Ysra Renn,P-04263,Joren Renn,spouse / partner,assistant,HH-1208-02,1 Low Arch Way
+AR-0394,Blue Basin Washhouse,23 Ravenshade Way,P-01321,Dagna Brightanvil,P-01320,Durra Irontumbler,spouse / partner,washer,HH-0394-01,23 Ravenshade Way
+AR-0418,The White Sheet,12 Washhouse Lane,P-00810,Hale Grell,P-00811,Celia Grell,spouse / partner,washer,HH-0312-03,1 Redbrick Row
+AR-0525,The Raven,2 Petitioners' Lane,P-01460,Perrin Kell,P-01462,Cedren Kell,child,taproom server,HH-0419-02,19 Ravenshade Way
+AR-0546,The Wooden Rule,27 Weaver's Cut,P-02140,Korin Stonebuckle,P-02139,Hildi Silverstave,landlord / household host,journeyman carpenter,HH-0611-01,11 Weaver's Cut
+AR-0586,The Three Spindles,21 Weaver's Cut,P-02116,Iria Dain,P-02120,Elira Brend,household relative,inn clerk,HH-0608-01,9 Weaver's Cut
+AR-0618,Black Hammer Forge,6 Bellglass Way,P-02163,Jorin Varren,P-02164,Fen Dale,spouse / partner,journeyman smith,HH-0618-01,6 Bellglass Way
+AR-0718,Three Roads & Long Caravan,3 Stoneback Road,P-00979,Hale Kerrin,P-00980,Elian Kerrin,spouse / partner,warehouse clerk,HH-0329-09,34 Ravenshade Way
+AR-0718,Three Roads & Long Caravan,3 Stoneback Road,P-00979,Hale Kerrin,P-00982,Ilyra Kerrin,parent,porter,HH-0329-09,34 Ravenshade Way
+AR-0742,Red Bakehouse,3 Starfall Avenue,P-05986,Cedren Eld,P-05981,Yorin Garrick,landlord / household host,journeyman baker,HH-1536-01,3 Loom Court
+AR-0779,The Lucky Owl,5 Copper Measure Lane,P-02584,Avela Bell,P-02583,Ysra Ward,spouse / partner,cook,HH-0779-01,5 Copper Measure Lane
+AR-0814,Mortise & Square & Plane,6 Petitioners' Lane,P-02509,Torg Ironspoke,P-02508,Nori Underforge,spouse / partner,journeyman carpenter,HH-0757-01,1 Eight-Star Stair
+AR-0957,Smoke Yard & Charcoal Mound,10 Threadmarket Way,P-03089,Elira Aster,P-03090,Hale Pike,household relative,kiln worker,HH-0983-02,2 Threadmarket Way
+AR-0967,The Black Cup,10 Wellcourt Lane,P-03038,Tovin Woodell,P-03039,Varen Morrow,spouse / partner,cook,HH-0967-01,10 Wellcourt Lane
+AR-0981,Rolling Pin Bakehouse,3 Threadmarket Way,P-03027,Ysra Pell,P-03026,Naren Morrow,parent / older relative,journeyman baker,HH-0963-01,16 Cherrytorn Road
+AR-1059,Quiet Forge,14 Lattice Walk,P-03960,Tilda Maltbeard,P-03963,Perrin Deepdelve,cousin by marriage,journeyman smith,HH-1095-01,7 Lattice Walk
+AR-1137,Boiling House & Black Pot,14 Newcomer's Way,P-03996,Iria Nairn,P-03995,Elise Renn,spouse / partner,assistant,HH-1134-01,19 Newcomer's Way
+AR-1159,Whisper Vault,22 Wagoner's Way,P-04014,Kael Nairn,P-04017,Naren Mere,household relative,assistant,HH-1159-01,22 Wagoner's Way
+AR-1159,Whisper Vault,22 Wagoner's Way,P-04014,Kael Nairn,P-04013,Joren Mere,spouse / partner,clerk,HH-1159-01,22 Wagoner's Way
+AR-1161,The Dancing Key,23 Underwall Passage,P-04023,Tovin Thorn,P-04024,Calder Eld,sibling-in-law,cook,HH-1161-01,23 Underwall Passage
+AR-1162,The Amber Raven,4 Wagoner's Way,P-04103,Davra Berrow,P-04101,Calven Renn,household relative,taproom server,HH-1174-01,2 Dripstone Alley
+AR-1162,The Amber Raven,4 Wagoner's Way,P-04103,Davra Berrow,P-04105,Edrin Renn,household relative,cook,HH-1174-01,2 Dripstone Alley
+AR-1182,The Burnished Cup,8 Southwall Way,P-04138,Selka Tanner,P-04137,Dain Redanvil,spouse / partner,taproom server,HH-1182-01,8 Southwall Way
+AR-1359,The Black Kettle,16 Tanners' Run,P-01412,Galen Morrow,P-01411,Ansel Lark,parent / older relative,taproom server,HH-0408-01,10 Brickmaker's Court
+AR-1371,Grey Chisel & Stone Hammer,23 Quarry Gate,P-05243,Kelda Kegward,P-05240,Gilda Ironledger,household employer,journeyman mason,HH-1425-01,10 North Road
+AR-1396,Ash & Brick Yard,3 Cartyard Lane,P-05122,Jorin Bell,P-05123,Tessa Berrow,household relative,kiln worker,HH-1400-01,9 Miller's Rise
+AR-1396,Ash & Brick Yard,3 Cartyard Lane,P-05122,Jorin Bell,P-05125,Rhea Berrow,household relative,clay worker,HH-1400-01,9 Miller's Rise
+AR-1480,The Black Malt,7 Cherrytorn Road,P-06164,Calven Yarrow,P-06165,Alden Sable,spouse / partner,brewer,HH-1579-02,4 Hammer Street
+AR-1567,Longhorn Stockyard,5 South Road,P-01149,Cora Hearthwell,P-01152,Fen Hearthwell,household relative,assistant,HH-0350-01,29 Ravenshade Way
+AR-1600,Verdant Alehouse,8 Masons' Row,P-06327,Dara Thorn,P-06325,Beren Tinbell,household relative,taproom server,HH-1600-01,8 Masons' Row
+AR-0230,Last Lantern & Quiet Bell,16 Cobbler's Way,P-00520,Iria Torr,P-00523,Yorin Mere,ward / foster child,runner,HH-0230-01,16 Cobbler's Way
+AR-0271,Curious Cabinet & Old Chest,22 Astronomer's Close,P-00599,Jorin Hollis,P-00600,Alden Rath,sibling-in-law,shop assistant,HH-0271-01,22 Astronomer's Close
+AR-0362,The Cinnamon Chest,2 Quill Lane,P-01295,Tomas Vellis,P-01298,Iven Stone,household relative,assistant,HH-0383-01,10 Quill Lane
+AR-0393,Twelve Facets & Silver Chain,21 Ravenshade Way,P-01318,Rhea Lester,P-01317,Alden Dennet,spouse / partner,journeyman,HH-0393-01,21 Ravenshade Way
+AR-0415,Silver Key & Seven Locks,39 Street of Lanterns,P-01437,Arlen Pell,P-01439,Jun Brend,sibling-in-law,journeyman,HH-0414-02,41 Street of Lanterns
+AR-0458,The Herring,26 Street of Lanterns,P-01648,Neris Grell,P-01650,Benn Harrowell,sibling-in-law,assistant,HH-0458-01,26 Street of Lanterns
+AR-0460,The Red Onion,28 Street of Lanterns,P-01655,Orin Varn,P-01656,Elian Lark,child / dependent,shop assistant,HH-0460-01,28 Street of Lanterns
+AR-0473,The Tumbler's Cask,20 Bramble Way,P-01674,Fenna Brightanvil,P-01673,Hald Whetstone,spouse / partner,taproom server,HH-0473-01,20 Bramble Way
+AR-0482,The Moon,21 Street of Lanterns,P-01698,Valen Selden,P-01697,Naren Kerrin,spouse / partner,housekeeper,HH-0482-01,21 Street of Lanterns
+AR-0488,Rolling Pin & Rising Loaf,15 Street of Lanterns,P-01717,Rhea Selden,P-01716,Willa Sable,spouse / partner,journeyman baker,HH-0488-01,15 Street of Lanterns
+AR-0490,The Cheese Press,10 Bramble Way,P-01723,Hale Carrow,P-01722,Kelda Tinbell,landlord / household host,assistant,HH-0490-01,10 Bramble Way
+AR-0548,Crystal Furnace & Hot Sand,29 Weaver's Cut,P-05740,Tessa Elver,P-05738,Calven Elver,cousin,assistant,HH-1512-01,4 Gateward Street
+AR-0550,The Blue Crock,33 Weaver's Cut,P-01853,Tarin Iven,P-01854,Tessa Sable,household relative,journeyman,HH-0551-01,14 Weaver's Cut
+AR-0552,Black Provisions,16 Weaver's Cut,P-00825,Calder Eld,P-00830,Naren Eld,household relative,shop assistant,HH-0314-01,12 Redbrick Row
+AR-0556,The Green Leaf,12 Saffron Street,P-01872,Nella Tanner,P-01875,Tomas Kerrin,aunt / uncle by marriage,runner,HH-0556-01,12 Saffron Street
+AR-0557,The Fine Stitch,8 Saffron Street,P-04155,Alden Varren,P-04151,Avela Varren,cousin,journeyman tailor,HH-1202-01,4 Dripstone Alley
+AR-0564,Bread Bell & Honey Bun,5 Dyer's Lane,P-01904,Corin Marel,P-01905,Nella Bell,household relative,journeyman baker,HH-0564-01,5 Dyer's Lane
+AR-0564,Bread Bell & Honey Bun,5 Dyer's Lane,P-01904,Corin Marel,P-01903,Joren Bell,spouse / partner,oven hand,HH-0564-01,5 Dyer's Lane
+AR-0616,Three Boards & Oak Mallet,4 Bellglass Way,P-02160,Alden Wren,P-02159,Beren Vale,spouse / partner,journeyman carpenter,HH-0616-01,4 Bellglass Way
+AR-0621,Alchemists' Collegium,3 Bellglass Way,P-02155,Dorin Silverstave,P-02157,Varen Irontumbler,ward / foster child,apprentice,HH-0615-01,2 Bellglass Way
+AR-0664,Blue Thread Tailory,16 Brassfounders' Way,P-02265,Maren Harrowell,P-02264,Tessa Woodell,spouse / partner,cutter,HH-0664-01,16 Brassfounders' Way
+AR-0677,The White Crow,15 Stoneback Road,P-02622,Ilyen Evershade,P-02623,Syla Thalanil,spouse / partner,bookseller's assistant,HH-0802-01,6 Awning Street
+AR-0700,White Bone & Boar,2 Tinker's Hollow,P-03703,Marda Tinwhistle,P-03707,Varrik Tinwhistle,household relative,journeyman butcher,HH-1065-01,21 Lattice Walk
+AR-0711,The Full Cupboard,14 Spice Row,P-02419,Mella Harrowell,P-02416,Mira Pike,landlord / household host,shop assistant,HH-0709-01,16 Spice Row
+AR-0736,The Brass Mortar,15 Councilor's Walk,P-00453,Perrin Hollis,P-00452,Roder Hollis,household relative,apothecary assistant,HH-0148-01,4 Ministry Row
+AR-0805,The Old Chest,4 Glassmaker's Row,P-02633,Neris Marel,P-02631,Torren Grell,cousin by marriage,counter clerk,HH-0805-01,4 Glassmaker's Row
+AR-0808,The Juniper Jar,11 Awning Street,P-02641,Bessa Quill,P-02640,Sera Brend,spouse / partner,herb runner,HH-0808-01,11 Awning Street
+AR-1032,Swan Inn,8 Wellcourt Lane,P-03402,Dara Fenn,P-03401,Rhea Fenn,sibling,inn clerk,HH-1032-01,8 Wellcourt Lane
+AR-1033,Lantern Alehouse,13 Wellcourt Lane,P-03404,Tomas Marel,P-03403,Elise Fenn,spouse / partner,taproom server,HH-1033-01,13 Wellcourt Lane
+AR-1084,Velvet Bolt & Button & Thread,11 Lattice Walk,P-03917,Merrit Yarrow,P-03916,Ansel Merryfoot,household relative,journeyman tailor,HH-1084-01,11 Lattice Walk
+AR-1084,Velvet Bolt & Button & Thread,11 Lattice Walk,P-03917,Merrit Yarrow,P-03914,Fen Merryfoot,parent / older relative,cutter,HH-1084-01,11 Lattice Walk
+AR-1100,Cask Alehouse,48 Lattice Walk,P-03909,Hobb Sedge,P-03913,Fennel Hedgewick,niece / nephew,taproom server,HH-1083-02,13 Lattice Walk
+AR-1106,Ruby Ring & Silver Chain,2 Ragpicker Lane,P-02947,Ssil Mudscale,P-02949,Karr Siltwalker,sibling-in-law,journeyman,HH-0946-02,15 Eastgate Road
+AR-1117,The Ash & Brick,7 Newcomer's Way,P-05423,Elira Pell,P-05424,Joren Pell,spouse / partner,kiln worker,HH-1449-02,11 Moonmint Lane
+AR-1194,The Copper Bell,33 Low Arch Way,P-05802,Runa Steelbutton,P-05804,Hald Steelbutton,household relative,assistant,HH-1519-01,11 Cherrytorn Road
+AR-1310,Horn & Hoof Works,14 Hideworkers' Lane,P-02671,Yorin Tanner,P-02670,Dara Tanner,spouse / partner,assistant,HH-0818-01,13 Stoneback Road
+AR-1333,The Brass Cup,5 Drover's Road,P-05395,Rassik Floodscale,P-05396,Karr Greentooth,household relative,inn clerk,HH-1446-01,3 Kiln Track
+AR-1361,The Copper Bridge,12 Tanners' Run,P-05012,Perrin Aster,P-05011,Torren Renn,spouse / partner,cook,HH-1361-01,12 Tanners' Run
+AR-1370,Red Wheel & Rolling Wheel,16 Bone Yard Lane,P-05145,Roderic Maltbeard,P-05140,Odrin Goldspoke,landlord / household host,journeyman,HH-1403-01,10 Miller's Rise
+AR-1392,Bright Provisions,12 Tallow Street,P-05109,Neris Carrow,P-05110,Elira Rath,household relative,shop assistant,HH-1392-01,12 Tallow Street
+AR-1393,The Fine Binding,7 Tallow Street,P-05112,Dara Vellis,P-05113,Naren Sable,household relative,assistant,HH-1393-01,7 Tallow Street
+AR-1483,The Lamp,1 Rookery Lane,P-05939,Ilyra Perrick,P-05936,Cedren Iven,household relative,library assistant,HH-1531-01,12 Farmer's Spur
+AR-1548,Moon & Cask,1 Rosewater Row,P-06020,Alis Ordel,P-06022,Davra Dennet,cousin by marriage,cook,HH-1548-01,1 Rosewater Row
+AR-1664,Starry Trading House,1 Mossgate Walk,P-06026,Darrin Brassmantle,P-06028,Runa Flintmantle,sibling-in-law,warehouse clerk,HH-1557-01,7 Ivory Walk
+AR-1675,The Three Fires,8 Caravan Road,P-05403,Cedren Dain,P-05402,Harlan Norr,spouse / partner,kiln worker,HH-1447-01,1 Kiln Track
+AR-0016,Black Ink & Signed Hand,11 Councilor's Walk,P-01984,Perrin Rath,P-01981,Caelan Rath,household relative,junior scrivener,HH-0580-01,4 Apprentice Way
+AR-0061,Eightfold Legal Chambers,5 Potters' Track,P-02638,Roder Kell,P-02637,Celia Kell,spouse / partner,junior scrivener,HH-0807-01,6 Glassmaker's Row
+AR-0069,The Bent Key,1 Petitioners' Lane,P-05383,Ysra Selden,P-05380,Calven Selden,household relative,shop assistant,HH-1444-01,13 Kiln Track
+AR-0156,The Quiet Image,36 Ravenshade Way,P-00395,Roderic Goldclasp,P-00391,Brog Redforge,landlord / household host,assistant,HH-0127-01,2 Amberlight Street
+AR-0244,Healing Palm & Green Cross,26 Guild Row,P-00584,Bessa Aster,P-00586,Willa Kerrin,adult child,assistant,HH-0267-01,18 Astronomer's Close
+AR-0274,The Silver Sigil,13 Astronomer's Close,P-00624,Dobb Cloverdown,P-00625,Bim Brend,child / dependent,apprentice mage,HH-0280-01,19 Astronomer's Close
+AR-0286,Stag & Crow,14 Street of Lanterns,P-00630,Nessa Dain,P-00629,Derrin Morrow,spouse / partner,server,HH-0286-01,14 Street of Lanterns
+AR-0304,Quill & Legal Quill,5 Street of Lanterns,P-00736,Lena Rusk,P-00738,Sera Sable,sibling-in-law,junior scrivener,HH-0304-01,5 Street of Lanterns
+AR-0304,Quill & Legal Quill,5 Street of Lanterns,P-00736,Lena Rusk,P-00737,Kesh Sable,spouse / partner,clerk,HH-0304-01,5 Street of Lanterns
+AR-0381,The Ox Head,26 Redbrick Row,P-01288,Tovin Ordel,P-01289,Dorian Grell,adult child,journeyman butcher,HH-0381-01,26 Redbrick Row
+AR-0390,The Silver Razor,4 Oatmarket Lane,P-01526,Celia Harrowell,P-01530,Derrin Harrowell,sibling,assistant,HH-0427-02,10 Ravenshade Way
+AR-0412,Laughing Tailory,45 Street of Lanterns,P-01194,Seraphine Thalanil,P-01192,Zizzi Latchkey,household employer,journeyman tailor,HH-0355-01,20 Ravenshade Way
+AR-0435,The Clean Hand,30 Redbrick Row,P-01269,Dagna Stonekeg,P-01268,Gerta Strongbar,spouse / partner,journeyman,HH-0363-04,18 Redbrick Row
+AR-0437,Turning Wheel & Blue Crock,32 Redbrick Row,P-03761,Celia Kell,P-03757,Maren Kell,cousin,journeyman,HH-1069-01,35 Lattice Walk
+AR-0457,The Silver Needle,7 Ravenshade Way,P-01646,Iria Brend,P-01647,Tomas Iven,child / dependent,apprentice tailor,HH-0457-01,7 Ravenshade Way
+AR-0462,Oven Bakehouse,7 Washhouse Lane,P-05985,Nella Garrick,P-05982,Tessa Garrick,household relative,journeyman baker,HH-1536-01,3 Loom Court
+AR-0467,White Feather & Fletched Shaft,1 Three Wells Lane,P-01680,Alden Carrow,P-01681,Vera Woodell,household relative,assistant,HH-0475-01,18 Bramble Way
+AR-0484,The Silver Wheel,19 Street of Lanterns,P-02003,Ysra Eld,P-02004,Rhea Eld,spouse / partner,taproom server,HH-0582-02,12 Weaver's Cut
+AR-0489,Clove Box & Cinnamon Chest,1 Bramble Way,P-01720,Tovin Rusk,P-01719,Orren Crowe,spouse / partner,assistant,HH-0489-01,1 Bramble Way
+AR-0505,The Brass Scale,14 Awning Street,P-03165,Dorian Aster,P-03164,Avela Aster,spouse / partner,assistant,HH-0991-01,4 Eastgate Road
+AR-0528,The Quiet Pike,1 Market Cross,P-01828,Jessa Farrow,P-01826,Varen Fenn,landlord / household host,taproom server,HH-0528-01,1 Market Cross
+AR-0584,Breastplate & Brazen Helm,10 Weaver's Cut,P-02126,Elira Quill,P-02128,Alden Bell,household relative,journeyman,HH-0609-01,13 Weaver's Cut
+AR-0584,Breastplate & Brazen Helm,10 Weaver's Cut,P-02126,Elira Quill,P-02124,Oris Bell,household relative,shop hand,HH-0609-01,13 Weaver's Cut
+AR-0585,Red Hand Works,23 Weaver's Cut,P-01998,Galen Torr,P-01997,Willa Carrow,spouse / partner,journeyman,HH-0582-01,12 Weaver's Cut
+AR-0628,The Ten-Foot Pole,14 Apprentice Way,P-02188,Calder Nairn,P-02187,Hale Rill,spouse / partner,assistant,HH-0628-01,14 Apprentice Way
+AR-0661,The Swift Hare,20 Brassfounders' Way,P-02253,Corin Krail,P-02252,Aren Kell,spouse / partner,assistant,HH-0661-01,20 Brassfounders' Way
+AR-0675,The Pepper Sack,7 Stoneback Road,P-05706,Ansel Marrow,P-05702,Alden Dennet,household employer,assistant,HH-1507-02,2 Ledger Lane
+AR-0676,The Seven Tongues,11 Stoneback Road,P-05162,Tomas Hollis,P-05163,Kellan Hollis,household relative,journeyman,HH-1406-01,6 Miller's Rise
+AR-0687,The Buried Coin,27 Spice Row,P-02305,Mella Fenwick,P-02306,Sera Dale,household relative,assistant,HH-0687-01,27 Spice Row
+AR-0726,Ashen Shoemakers,8 Spice Row,P-02401,Lorin Morrow,P-02404,Nella Iven,household relative,apprentice cobbler,HH-0706-01,23 Spice Row
+AR-0795,White Sheet & Clean Linen,1 Lantern Loop,P-03056,Nella Renn,P-03057,Perrin Pell,spouse / partner,washer,HH-0972-01,15 Farmer's Spur
+AR-0810,Curd Bowl & Cream Crock,13 Awning Street,P-04715,Mira Varn,P-04714,Tovin Varn,spouse / partner,assistant,HH-1262-01,13 Ember Lane
+AR-1028,The Iron Swan,4 Wellcourt Lane,P-03386,Kael Fenn,P-03388,Calven Rill,household relative,cook,HH-1028-01,4 Wellcourt Lane
+AR-1028,The Iron Swan,4 Wellcourt Lane,P-03386,Kael Fenn,P-03385,Tessa Rill,spouse / partner,cleaner,HH-1028-01,4 Wellcourt Lane
+AR-1099,The Swan,25 Newcomer's Way,P-03782,Galen Ordel,P-03781,Calven Ordel,spouse / partner,taproom server,HH-1070-05,38 Lattice Walk
+AR-1123,Golden Shears & Button & Thread,4 Cloak Alley,P-03187,Tobin Mossbank,P-03191,Lio Merryfoot,household relative,journeyman tailor,HH-0994-01,10 Eastgate Road
+AR-1130,Stout Sole & Boot & Buckle,12 Cloak Alley,P-03866,Fenna Granitehand,P-03862,Selka Berrow,household employer,journeyman cobbler,HH-1077-01,6 Reedbank Row
+AR-1133,Wheatsheaf Bakehouse,21 Newcomer's Way,P-03876,Lessa Willow,P-03874,Verren Moss,household employer,journeyman baker,HH-1080-01,4 Reedbank Row
+AR-1168,Raven Rooms,6 Southwall Way,P-06457,Perrin Yarrow,P-06455,Selka Fenn,landlord / household host,housekeeper,HH-1629-01,8 Wagoner's Way
+AR-1380,The Saddle Gate,6 Quarry Gate,P-06462,Willa Yarrow,P-06461,Ysra Yarrow,sibling,stable hand,HH-1629-02,8 Wagoner's Way
+AR-1416,Rising Loaf & Grain Sack,7 Quarry Gate,P-00251,Ilyra Tanner,P-00246,Perrin Tanner,cousin,journeyman baker,HH-0101-01,12 Velvet Court Lane
+AR-1459,The Old Sparrow,6 Seralienne Way,P-05484,Galen Varn,P-05483,Hale Rath,spouse / partner,taproom server,HH-1459-01,6 Seralienne Way
+AR-1594,Rusty Rooms,2 South Road,P-06291,Cedren Carrow,P-06286,Caelan Fenn,landlord / household host,housekeeper,HH-1594-01,2 South Road
+AR-1598,Swan Cookhouse,11 Piper's Walk,P-05472,Cedren Pell,P-05471,Rhea Pell,spouse / partner,cook,HH-1457-01,2 Seralienne Way
+AR-1599,The Burnished Bridge,9 Piper's Walk,P-06260,Thaz Ashscale,P-06263,Dessa Basks-in-Rain,household relative,housekeeper,HH-1588-01,8 Piper's Walk
+AR-1607,Hare Alehouse,3 Piper's Walk,P-06347,Jessa Krail,P-06349,Cedren Yarrow,household relative,taproom server,HH-1607-01,3 Piper's Walk
+AR-0154,Birthing Star & First Cry,1 Ministry Row,P-00459,Selka Bell,P-00458,Wren Rill,spouse / partner,assistant,HH-0149-02,2 Ministry Row
+AR-0189,The Bell,12 Selenic Walk,P-00494,Vera Marel,P-00495,Elise Brend,household relative,housekeeper,HH-0189-01,12 Selenic Walk
+AR-0258,The Hemp Coil,3 Street of Lanterns,P-00544,Dara Farrow,P-00543,Calven Grell,spouse / partner,assistant,HH-0261-01,4 Street of Lanterns
+AR-0275,Lantern Books,18 Cobbler's Way,P-00540,Bera Redforge,P-00539,Farin Redanvil,spouse / partner,bookseller's assistant,HH-0245-01,1 Cobbler's Way
+AR-0358,The Fire & Iron,8 Feather Court,P-01223,Valen Kell,P-01222,Rhea Morrow,spouse / partner,journeyman smith,HH-0358-01,8 Feather Court
+AR-0655,The Iron Lock,2 Weaver's Cut,P-02220,Avela Woodell,P-02221,Nella Dennet,household relative,journeyman,HH-0655-01,2 Weaver's Cut
+AR-0659,White Hand & Physician's Lamp,22 Brassfounders' Way,P-02244,Maren Rath,P-02243,Davra Kerrin,spouse / partner,assistant,HH-0659-01,22 Brassfounders' Way
+AR-0662,Burnished Pot & Brazen Cup,18 Brassfounders' Way,P-02259,Emric Varren,P-02256,Torren Crowe,parent / older relative,assistant,HH-0662-01,18 Brassfounders' Way
+AR-0971,Eel Pot & Hook & Line,18 Farmer's Spur,P-04591,Cedren Bell,P-04592,Tomas Bell,spouse / partner,assistant,HH-1243-01,25 Low Arch Way
+AR-1029,The Red Goose,5 Wellcourt Lane,P-03392,Merrit Sable,P-03396,Elian Vale,household relative,housekeeper,HH-1029-01,5 Wellcourt Lane
+AR-1029,The Red Goose,5 Wellcourt Lane,P-03392,Merrit Sable,P-03395,Tomas Stone,household relative,cook,HH-1029-01,5 Wellcourt Lane
+AR-1081,Hook Butchery,3 Reedbank Row,P-03891,Mella Harrow,P-03890,Joren Marrow,spouse / partner,journeyman butcher,HH-1081-01,3 Reedbank Row
+AR-1081,Hook Butchery,3 Reedbank Row,P-03891,Mella Harrow,P-03892,Kellan Crowe,child / dependent,apprentice butcher,HH-1081-01,3 Reedbank Row
+AR-1095,Black Saddle & Saddle Tree,7 Lattice Walk,P-03780,Cedren Vale,P-03779,Kellan Vale,household relative,journeyman,HH-1070-04,38 Lattice Walk
+AR-1102,The Wool Bale,46 Lattice Walk,P-03429,Kael Sable,P-03430,Torga Oakhammer,child / dependent,assistant,HH-1040-01,33 Lattice Walk
+AR-1105,Hook & White Bone,4 Ragpicker Lane,P-03986,Brenna Pell,P-03990,Dorian Vale,ward / foster child,apprentice butcher,HH-1104-01,6 Ragpicker Lane
+AR-1108,The Amber Cat,23 Newcomer's Way,P-03758,Nella Kell,P-03762,Davra Kell,household relative,cook,HH-1069-01,35 Lattice Walk
+AR-1415,Fair Butchery,5 Quarry Gate,P-05229,Harlan Bell,P-05228,Aren Pike,cousin by marriage,journeyman butcher,HH-1419-01,11 Quarry Gate
+AR-1544,Basket Hoop & Woven Reed,4 Needle Court,P-06052,Mira Tanner,P-06048,Lena Lester,adult child / younger relative,assistant,HH-1560-01,11 South Road
+AR-1655,The Tallow Star,5 Caravan Road,P-06566,Valen Harrow,P-06568,Vera Lark,child / dependent,apprentice,HH-1676-10,25 Ministry Row
+AR-1659,The Barrel Head,4 Caravan Road,P-06032,Jorin Marren,P-06031,Joren Pell,household relative,journeyman,HH-1557-02,7 Ivory Walk
+AR-0219,Three Jugs & Blue Crock,39 Lantern Loop,P-00730,Kael Ordel,P-00729,Harlan Tanner,spouse / partner,journeyman,HH-0303-01,2 Bramble Way
+AR-0392,White Hand & Blue Cup,1 Feather Court,P-01359,Garran Marel,P-01361,Roder Lester,household relative,assistant,HH-0401-01,16 Feather Court
+AR-0402,The Full Larder,47 Street of Lanterns,P-01365,Harlan Torr,P-01366,Elian Renn,sibling-in-law,shop assistant,HH-0402-01,47 Street of Lanterns
+AR-0409,Open Crate & Bent Key,8 Brickmaker's Court,P-01415,Elise Nairn,P-01414,Ysra Dale,spouse / partner,shop assistant,HH-0409-01,8 Brickmaker's Court
+AR-0439,The Oak Cask,13 Redbrick Row,P-01235,Mella Penton,P-01237,Cedren Marrow,sibling-in-law,journeyman,HH-0359-03,14 Redbrick Row
+AR-0549,The Silver Window,31 Weaver's Cut,P-02127,Arlen Marrow,P-02123,Jessa Bell,landlord / household host,journeyman,HH-0609-01,13 Weaver's Cut
+AR-0561,The Three Hats,14 Saffron Street,P-01011,Mira Morrow,P-01006,Celia West,parent / older relative,assistant,HH-0332-01,39 Ravenshade Way
+AR-0563,Blue Crock & Red Kiln,6 Dyer's Lane,P-01899,Orin Harrowell,P-01902,Edrin Rath,sibling-in-law,journeyman,HH-0563-01,6 Dyer's Lane
+AR-0571,Soft Mantle & Winter Hare,18 Saffron Street,P-00131,Nella Casker,P-00129,Dorian Morrow,landlord / household host,journeyman,HH-0078-01,18 Ministry Row
+AR-0572,The Saffron Jar,20 Saffron Street,P-01930,Borin Ironledger,P-01927,Torren Kegward,adult child / younger relative,assistant,HH-0574-01,5 Apprentice Way
+AR-0620,Seven Spices & Pepper Sack,8 Bellglass Way,P-03094,Cedren Vellis,P-03092,Iria Vellis,sibling,assistant,HH-0984-01,14 Ledger Lane
+AR-0623,Coiled Rope & Woven Reed,7 Bellglass Way,P-02057,Sorra Siltwalker,P-02052,Elian Marrow,household employer,assistant,HH-0601-01,13 Dawnfire Promenade
+AR-0649,The Walnut Crown,12 Bellglass Way,P-02192,Sera Harrow,P-02191,Vera Fenn,spouse / partner,journeyman,HH-0649-01,12 Bellglass Way
+AR-0683,Pack & Pike Outfitters,1 Pearl Street,P-04116,Elise Bell,P-04114,Kellan Kell,household employer,assistant,HH-1175-02,13 Underwall Passage
+AR-0813,The Feathered Hat,14 Glassmaker's Row,P-02656,Arlen Kerrin,P-02655,Joren Rath,spouse / partner,assistant,HH-0813-01,14 Glassmaker's Row
+AR-0849,Breastplate Armory,9 Oldback Steps,P-02720,Hildi Redforge,P-02721,Rhea Copperwhistle,spouse / partner,journeyman,HH-0832-01,33 Petitioners' Lane
+AR-0956,The Steel Ward,7 Farmer's Spur,P-02958,Tovin Bracken,P-02961,Dorrik Redanvil,household relative,journeyman,HH-0948-01,1 Ledger Lane
+AR-1063,The Wax Seal,17 Lattice Walk,P-03682,Willa Quill,P-03685,Hale Crowe,adult child,journeyman,HH-1063-01,17 Lattice Walk
+AR-1338,Grey Marten & Winter Hare,18 Quarry Gate,P-05027,Durn Hammerbell,P-05026,Varrik Gravelock,spouse / partner,journeyman,HH-1379-01,15 Quarry Gate
+AR-1533,The Three Thimbles,21 Eastgate Road,P-05964,Kael Farrow,P-05967,Cedren Holt,cousin by marriage,journeyman tailor,HH-1533-01,21 Eastgate Road
+AR-1542,The Silver Spur,10 Needle Court,P-06072,Elise Iven,P-06070,Elian Bell,landlord / household host,journeyman,HH-1561-02,11 Ivory Walk

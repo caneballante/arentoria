@@ -1,0 +1,32 @@
+# Dependencies
+/node_modules/
+
+# Next.js
+/.next/
+/out/
+
+# Local database and import artifacts
+/data/*.sqlite
+/data/*.sqlite-*
+/data/backups/
+/data/reports/
+/data/generated/
+/data/review/
+
+# Generated map assets
+/public/generated/
+
+# Local tooling
+*.log
+.runtime/
+/.codex/
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env*
+!.env.example
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
