@@ -24,6 +24,7 @@
 | `location_overlay`, `relationship`, `infrastructure` | v21 faction workbook | Authored pressure-network overlays |
 | `source_snapshot`, `source_record`, `import_run` | Every import source | File hashes, row provenance, and import history |
 | `app_note`, `lore_record`, `lore_link`, `story_profile`, `session_pin`, `recent_view` | App-owned | Persistent DM story fields and user/session data preserved independently of source re-imports |
+| `campaign_building_override`, `campaign_building_revision` | App-owned | Approved building identity, occupant disposition, source fingerprint, and reversible change history |
 
 ## Narrative projection boundary
 

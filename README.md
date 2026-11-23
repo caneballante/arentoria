@@ -11,6 +11,7 @@ A local-first, live-session reference for the city of Arentoria. The app imports
 - Full 10,000-resident census with normalized home, household, group-quarter, workplace, coworker, family-employment, and faction links.
 - Authored `AR-0738` → Bilious's Magic Shoppe → Bilious → home/workplace vertical slice.
 - Persistent recently viewed records and Tonight's Session pins.
+- Campaign building overrides with Excel export, conflict preview, selective approval, backups, and revision restore.
 - Person home/workplace map actions, district context cards, authored street-detail selection, and named map hover readouts.
 - Validated, transactional imports with source provenance, dry-run reporting, and automatic pre-import database backups.
 - Source-aware detail notices that distinguish current v20 census facts from v19 relationship/workforce edges.
@@ -44,3 +45,5 @@ The six root-level handoff artifacts and the eleven files under `source/full-cen
 The running app reads SQLite and prepared map assets only. CSV/XLSX files are read exclusively by the import/re-import script. See [`docs/source-audit.md`](docs/source-audit.md) for the source contract and [`docs/data-model.md`](docs/data-model.md) for table-level source mapping.
 
 For planning and feature-coverage reviews, use the searchable [`docs/build-prompt-reference.md`](docs/build-prompt-reference.md) mirror. It is generated from the immutable Word prompt by `scripts/export-build-prompt.py`; `AGENTS.md` records the checksum and refresh workflow for future Codex sessions.
+
+For campaign building changes, see [`docs/campaign-building-overrides.md`](docs/campaign-building-overrides.md). Approved identities remain separate from the immutable handoff sources.

@@ -33,6 +33,16 @@ textarea { font: inherit; }
 
 button { color: inherit; }
 
+.primary-nav a.nav-item { text-decoration: none; color: inherit; }
+.campaign-building-card { background: #eef3ed; border: 1px solid #a5b9a4; padding: 14px; }
+.campaign-building-card dl { display: grid; gap: 7px; margin: 12px 0; }
+.campaign-building-card dl div { display: grid; grid-template-columns: 110px 1fr; gap: 8px; }
+.campaign-building-card dt { color: #66716a; }
+.campaign-building-card dd { margin: 0; white-space: pre-wrap; }
+.campaign-building-card a, .campaign-no-override a { color: #1d5d5b; font-weight: 700; }
+.campaign-source-warning { padding: 9px; background: #fff2d5; color: #6f4c11; }
+.campaign-no-override { margin: 14px 20px; color: #58635c; }
+
 .console-shell {
   display: grid;
   grid-template-columns: 238px minmax(0, 1fr);

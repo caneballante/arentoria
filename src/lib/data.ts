@@ -1,6 +1,7 @@
 import "server-only";
 
 import { getDatabase } from "@/lib/db/client";
+import { campaignMapLabels, getBuildingContext, getCampaignOverride, searchCampaignBuildingOverrides } from "@/lib/campaign-buildings";
 import { buildPersonConnections, type ConnectionCandidate } from "@/lib/connections";
 import {
   firstSentence,
@@ -43,7 +44,10 @@ function entitySummary(stableId: string): EntityLink | null {
 
   if (entity.entity_type === "building") {
     const row = sqlite
-      .prepare("SELECT stable_id, name, address, district_name FROM building WHERE stable_id = ?")
+      .prepare(`SELECT b.stable_id, COALESCE(cbo.campaign_name, b.name) AS name,
+                       b.address, b.district_name FROM building b
+                LEFT JOIN campaign_building_override cbo ON cbo.building_id = b.stable_id
+                WHERE b.stable_id = ?`)
       .get(stableId) as SqlRow;
     return {
       stableId,
@@ -207,11 +211,14 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
   if (!entity) return null;
 
   if (entity.entity_type === "building") {
+    const campaignOverride = getCampaignOverride(sqlite, stableId);
+    const referenceOnly = campaignOverride?.occupant_disposition === "reference_only";
     const building = sqlite
       .prepare(`
         SELECT b.*,
                COALESCE(l.land_use, bc.primary_land_use) AS land_use,
                COALESCE(l.specific_use, bc.specific_use) AS specific_use,
+               bc.primary_land_use AS source_primary_use, bc.specific_use AS source_specific_use,
                l.visibility, l.notes,
                bc.road_id, bc.permanent_residents, bc.household_units,
                bc.group_quarter_residents, bc.workplace_staff_count,
@@ -260,7 +267,7 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
         LIMIT 24
       `)
       .all(stableId, stableId, stableId, stableId, stableId) as SqlRow[];
-    for (const person of associatedPeople) {
+    for (const person of referenceOnly ? [] : associatedPeople) {
       addRelated({
         stableId: String(person.stable_id),
         kind: "person",
@@ -288,25 +295,29 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
       .map((factionId) => entitySummary(factionId))
       .filter((item): item is EntityLink => Boolean(item));
     factionLinks.forEach(addRelated);
+    if (campaignOverride?.faction_id) addRelated(entitySummary(campaignOverride.faction_id));
     const story = storyProfileForEntity(stableId);
+    const campaignName = campaignOverride?.campaign_name ?? (building.name ? String(building.name) : stableId);
+    const campaignPrimaryUse = campaignOverride?.primary_use ?? (building.land_use ? String(building.land_use) : null);
+    const campaignSpecificUse = campaignOverride?.specific_use ?? (building.specific_use ? String(building.specific_use) : null);
     const narrative = projectBuildingNarrative({
-      title: String(building.name ?? stableId),
+      title: campaignName,
       address: building.address ? String(building.address) : null,
       district: String(building.district_name),
-      landUse: building.land_use ? String(building.land_use) : null,
-      specificUse: building.specific_use ? String(building.specific_use) : null,
-      residentCount: Number(building.permanent_residents ?? 0),
-      householdCount: Number(building.household_units ?? 0),
-      workplaceName: building.workplace_name ? String(building.workplace_name) : null,
-      workplaceLead: building.workplace_lead_name ? String(building.workplace_lead_name) : null,
-      staff: staff.map((member) => ({
+      landUse: campaignPrimaryUse,
+      specificUse: campaignSpecificUse,
+      residentCount: referenceOnly ? 0 : Number(building.permanent_residents ?? 0),
+      householdCount: referenceOnly ? 0 : Number(building.household_units ?? 0),
+      workplaceName: referenceOnly ? null : building.workplace_name ? String(building.workplace_name) : null,
+      workplaceLead: referenceOnly ? null : building.workplace_lead_name ? String(building.workplace_lead_name) : null,
+      staff: (referenceOnly ? [] : staff).map((member) => ({
         name: String(member.display_name),
         role: member.staff_role ? String(member.staff_role) : null,
         isLead: member.staff_level === "lead",
       })),
     });
     const canonicalCues: AtTableCue[] = [
-      associatedPeople.length > 0
+      !referenceOnly && associatedPeople.length > 0
         ? {
             label: "Who is here",
             value: naturalList(
@@ -319,14 +330,14 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
             source: "canonical" as const,
           }
         : null,
-      Number(building.permanent_residents) > 0
+      !referenceOnly && Number(building.permanent_residents) > 0
         ? {
             label: "Household situation",
             value: `${building.permanent_residents} resident${Number(building.permanent_residents) === 1 ? "" : "s"}; ${building.household_units ?? 0} household${Number(building.household_units) === 1 ? "" : "s"}.`,
             source: "canonical" as const,
           }
         : null,
-      wealthSnapshot.wealth_classes
+      !referenceOnly && wealthSnapshot.wealth_classes
         ? {
             label: "Economic picture",
             value: `Resident wealth classes: ${wealthSnapshot.wealth_classes}.`,
@@ -341,10 +352,14 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
           }
         : null,
     ].filter(present);
+    if (campaignOverride?.occupant_disposition === "reassignment_planned") {
+      canonicalCues.unshift({ label: "Occupants unresolved", value: "Source residents and staff remain linked here. Reassignment is planned but not complete.", source: "dm" });
+    }
     const fields = [
+      building.name ? { label: "Imported building name", value: String(building.name) } : null,
       building.address ? { label: "Address", value: String(building.address) } : null,
-      building.land_use ? { label: "Land use", value: String(building.land_use) } : null,
-      building.specific_use ? { label: "Specific use", value: String(building.specific_use) } : null,
+      building.source_primary_use ? { label: "Imported primary use", value: String(building.source_primary_use) } : null,
+      building.source_specific_use ? { label: "Imported specific use", value: String(building.source_specific_use) } : null,
       building.road_id ? { label: "Road ID", value: String(building.road_id) } : null,
       building.permanent_residents !== null
         ? { label: "Permanent residents", value: String(building.permanent_residents) }
@@ -370,7 +385,7 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
     return {
       stableId,
       kind: "building",
-      title: String(building.name ?? stableId),
+      title: campaignName,
       subtitle: String(building.address ?? building.district_name),
       district: String(building.district_name),
       sourceCompleteness: String(building.source_completeness),
@@ -391,6 +406,19 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
       fields,
       prompts: formatPrompts(promptRows),
       related,
+      campaignBuilding: campaignOverride ? {
+        name: campaignOverride.campaign_name,
+        primaryUse: campaignOverride.primary_use,
+        specificUse: campaignOverride.specific_use,
+        subtype: campaignOverride.subtype,
+        faith: campaignOverride.faith,
+        factionId: campaignOverride.faction_id,
+        notes: campaignOverride.dm_notes,
+        occupantDisposition: campaignOverride.occupant_disposition,
+        approvedAt: campaignOverride.approved_at,
+        sourceReason: campaignOverride.source_reason,
+        sourceChanged: getBuildingContext(sqlite, stableId)?.sourceHash !== campaignOverride.source_hash,
+      } : undefined,
       notice:
         building.source_completeness === "census-v20"
           ? "Current building facts come from the v20 census; residents and workplace links are resolved from normalized SQLite tables imported from the relationship CSV set."
@@ -407,6 +435,10 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
         WHERE p.stable_id = ?
       `)
       .get(stableId) as SqlRow;
+    const sourceOnlyHome = Boolean(person.home_building_id &&
+      getCampaignOverride(sqlite, String(person.home_building_id))?.occupant_disposition === "reference_only");
+    const sourceOnlyWork = Boolean(person.workplace_building_id &&
+      getCampaignOverride(sqlite, String(person.workplace_building_id))?.occupant_disposition === "reference_only");
     const memberships = sqlite
       .prepare(`
         SELECT f.stable_id, f.name, fm.faction_role, fm.day_job, fm.workplace,
@@ -432,7 +464,7 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
         ORDER BY p.display_name
       `)
       .all(stableId, stableId, stableId, stableId) as SqlRow[];
-    const residencePeers = person.residence_unit_id
+    const residencePeers = person.residence_unit_id && !sourceOnlyHome
       ? (sqlite
           .prepare(
             person.residence_type === "Household"
@@ -460,7 +492,7 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
           )
           .all(stableId, stableId) as SqlRow[])
       : [];
-    const coworkers = person.workplace_building_id
+    const coworkers = person.workplace_building_id && !sourceOnlyWork
       ? (sqlite
           .prepare(`
             SELECT p.stable_id, p.display_name, COALESCE(ws.staff_role, 'Coworker') AS connection,
@@ -477,7 +509,8 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
       : [];
     const familyEmploymentLinks = sqlite
       .prepare(`
-        SELECT p.stable_id, p.display_name, fel.relationship_to_lead, fel.employee_role,
+        SELECT p.stable_id, p.display_name, fel.workplace_building_id,
+               fel.relationship_to_lead, fel.employee_role,
                w.name AS workplace_name, w.address AS workplace_address,
                CASE WHEN fel.lead_person_id = ? THEN 'employee' ELSE 'lead' END AS connection_side
         FROM family_employment_link fel
@@ -489,12 +522,14 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
         ORDER BY p.display_name
       `)
       .all(stableId, stableId, stableId, stableId) as SqlRow[];
+    const currentFamilyEmploymentLinks = familyEmploymentLinks.filter((row) =>
+      !sourceOnlyWork || row.workplace_building_id !== person.workplace_building_id);
     const related: EntityLink[] = [];
     const addRelated = (item: EntityLink | null) => {
       if (item && !related.some((existing) => existing.stableId === item.stableId)) related.push(item);
     };
-    if (person.home_building_id) addRelated(entitySummary(String(person.home_building_id)));
-    if (person.workplace_building_id) addRelated(entitySummary(String(person.workplace_building_id)));
+    if (person.home_building_id && !sourceOnlyHome) addRelated(entitySummary(String(person.home_building_id)));
+    if (person.workplace_building_id && !sourceOnlyWork) addRelated(entitySummary(String(person.workplace_building_id)));
     for (const row of [...householdRelationships, ...residencePeers, ...coworkers]) {
       addRelated({
         stableId: String(row.stable_id),
@@ -515,10 +550,10 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
     const addConnectionCandidate = (candidate: ConnectionCandidate | null) => {
       if (candidate) connectionCandidates.push(candidate);
     };
-    const homeSummary = person.home_building_id
+    const homeSummary = person.home_building_id && !sourceOnlyHome
       ? entitySummary(String(person.home_building_id))
       : null;
-    const workplaceSummary = person.workplace_building_id
+    const workplaceSummary = person.workplace_building_id && !sourceOnlyWork
       ? entitySummary(String(person.workplace_building_id))
       : null;
     addConnectionCandidate(
@@ -563,7 +598,7 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
         priority: /spouse|parent|child|sibling|guardian|ward/i.test(relationship) ? 100 : 90,
       });
     }
-    for (const row of familyEmploymentLinks) {
+    for (const row of currentFamilyEmploymentLinks) {
       const employeeSide = row.connection_side === "lead";
       const role = row.employee_role ? String(row.employee_role) : null;
       const relationship = row.relationship_to_lead
@@ -645,18 +680,18 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
       ageBand: person.age_band ? String(person.age_band) : null,
       ancestry: person.ancestry ? String(person.ancestry) : null,
       dailyRole: person.occupation_daily_role ? String(person.occupation_daily_role) : null,
-      homeAddress: person.home_address ? String(person.home_address) : null,
+      homeAddress: !sourceOnlyHome && person.home_address ? String(person.home_address) : null,
       residenceType: person.residence_type ? String(person.residence_type) : null,
       residenceUnitId: person.residence_unit_id ? String(person.residence_unit_id) : null,
       residenceSize,
       wealthClass: person.wealth_class ? String(person.wealth_class) : null,
-      workplaceName: person.workplace_name ? String(person.workplace_name) : null,
-      workplaceAddress: person.workplace_address ? String(person.workplace_address) : null,
-      workplaceDistrict: person.workplace_district ? String(person.workplace_district) : null,
-      workplaceSpecificUse: person.workplace_specific_use
+      workplaceName: !sourceOnlyWork && person.workplace_name ? String(person.workplace_name) : null,
+      workplaceAddress: !sourceOnlyWork && person.workplace_address ? String(person.workplace_address) : null,
+      workplaceDistrict: !sourceOnlyWork && person.workplace_district ? String(person.workplace_district) : null,
+      workplaceSpecificUse: !sourceOnlyWork && person.workplace_specific_use
         ? String(person.workplace_specific_use)
         : null,
-      workplaceRole: person.workplace_role ? String(person.workplace_role) : null,
+      workplaceRole: !sourceOnlyWork && person.workplace_role ? String(person.workplace_role) : null,
       relationships: householdRelationships.map((relationship) => ({
         name: String(relationship.display_name ?? relationship.stable_id),
         relationship: String(relationship.connection ?? "household relationship"),
@@ -666,14 +701,14 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
         role: membership.faction_role ? String(membership.faction_role) : null,
       })),
     });
-    const householdSituation = person.home_address
+    const householdSituation = !sourceOnlyHome && person.home_address
       ? `${person.residence_type ?? "Residence"} ${person.residence_unit_id ?? ""} at ${person.home_address}${residenceSize ? `; ${residenceSize} resident${residenceSize === 1 ? "" : "s"}.` : "."}`
       : null;
     const canonicalCues: AtTableCue[] = [
       householdSituation
         ? { label: "Household situation", value: householdSituation, source: "canonical" as const }
         : null,
-      person.workplace_name
+      !sourceOnlyWork && person.workplace_name
         ? {
             label: "Workplace",
             value: `${String(person.workplace_name)}${person.workplace_specific_use ? ` (${String(person.workplace_specific_use)})` : ""}${person.workplace_address ? ` · ${String(person.workplace_address)}` : ""}${person.workplace_district ? ` · ${String(person.workplace_district)}` : ""}${person.workplace_role ? ` · ${String(person.workplace_role)}` : ""}`,
@@ -716,11 +751,16 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
         ? { label: "Public note", value: String(person.public_notes), source: "canonical" as const }
         : null,
     ].filter(present);
+    if (sourceOnlyHome || sourceOnlyWork) canonicalCues.unshift({
+      label: "Source location held for review",
+      value: `${sourceOnlyHome ? "The census home" : ""}${sourceOnlyHome && sourceOnlyWork ? " and " : ""}${sourceOnlyWork ? "the census workplace" : ""} are preserved in the source registry but excluded from current campaign presentation.`,
+      source: "dm",
+    });
     const mapTargets = [
-      person.home_building_id
+      person.home_building_id && !sourceOnlyHome
         ? { label: "Show home on map", stableId: String(person.home_building_id) }
         : null,
-      person.workplace_building_id
+      person.workplace_building_id && !sourceOnlyWork
         ? { label: "Show workplace on map", stableId: String(person.workplace_building_id) }
         : null,
     ].filter(
@@ -991,8 +1031,12 @@ export function getEntityDetail(stableId: string): EntityDetail | null {
     .all(String(district.name)) as ReturnType<typeof promptRowsForEntity>;
   const notableBusinesses = sqlite
     .prepare(`
-      SELECT w.building_id, w.name, w.specific_use, w.total_staff_count
+      SELECT w.building_id, COALESCE(cbo.campaign_name,w.name) AS name,
+             COALESCE(cbo.specific_use,w.specific_use) AS specific_use,
+             CASE WHEN cbo.occupant_disposition = 'reference_only' THEN 0
+                  ELSE w.total_staff_count END AS total_staff_count
       FROM workplace w
+      LEFT JOIN campaign_building_override cbo ON cbo.building_id = w.building_id
       WHERE w.district = ? AND w.source_present = 1
       ORDER BY w.total_staff_count DESC, w.name
       LIMIT 6
@@ -1069,12 +1113,14 @@ export function searchEntities(input: string): SearchResult[] {
   const matchQuery = normalizeSearchQuery(input);
   if (!matchQuery) return [];
   const { sqlite } = getDatabase();
-  return (
+  const imported = (
     sqlite
       .prepare(`
-        SELECT stable_id, entity_type, title, subtitle,
+        SELECT search_index.stable_id, search_index.entity_type,
+               COALESCE(cbo.campaign_name, search_index.title) AS title, search_index.subtitle,
                snippet(search_index, 4, '', '', '…', 14) AS excerpt
         FROM search_index
+        LEFT JOIN campaign_building_override cbo ON cbo.building_id = search_index.stable_id
         WHERE search_index MATCH ?
         ORDER BY bm25(search_index, 4.0, 0.2, 8.0, 2.0, 1.0)
         LIMIT 18
@@ -1093,27 +1139,40 @@ export function searchEntities(input: string): SearchResult[] {
     subtitle: row.subtitle,
     excerpt: row.excerpt,
   }));
+  const campaignResults = searchCampaignBuildingOverrides(sqlite, input);
+  return [...campaignResults, ...imported].filter((row, index, all) =>
+    all.findIndex((other) => other.stableId === row.stableId) === index).slice(0, 18);
 }
 
 export function getPlaceCategories(): PlaceCategorySummary[] {
   const { sqlite } = getDatabase();
   const rows = sqlite
     .prepare(`
-      SELECT specific_use, count(*) AS count
-      FROM workplace
-      WHERE source_present = 1 AND specific_use IS NOT NULL AND trim(specific_use) <> ''
-      GROUP BY specific_use
-      ORDER BY specific_use
+      SELECT b.stable_id AS building_id,
+             CASE WHEN cbo.occupant_disposition = 'reference_only' THEN cbo.specific_use
+                  ELSE COALESCE(cbo.specific_use,w.specific_use) END AS specific_use, cbo.subtype
+      FROM building b
+      LEFT JOIN workplace w ON w.building_id = b.stable_id AND w.source_present = 1
+      LEFT JOIN campaign_building_override cbo ON cbo.building_id = b.stable_id
+      WHERE w.building_id IS NOT NULL OR cbo.specific_use IS NOT NULL OR cbo.subtype IS NOT NULL
     `)
-    .all() as Array<{ specific_use: string; count: number }>;
+    .all() as Array<{ building_id: string; specific_use: string | null; subtype: string | null }>;
 
   return placeCategoryDefinitions.map((category) => {
-    const types = rows
-      .filter((row) => categorizePlaceType(row.specific_use) === category.id)
-      .map((row) => ({ specificUse: row.specific_use, count: Number(row.count) }));
+    const counts = new Map<string, number>();
+    const buildings = new Set<string>();
+    for (const row of rows) {
+      for (const label of new Set([row.specific_use, row.subtype].filter((value): value is string => Boolean(value?.trim())))) {
+        if (categorizePlaceType(label) !== category.id) continue;
+        counts.set(label, (counts.get(label) ?? 0) + 1);
+        buildings.add(row.building_id);
+      }
+    }
+    const types = [...counts].map(([specificUse, count]) => ({ specificUse, count }))
+      .sort((left, right) => left.specificUse.localeCompare(right.specificUse));
     return {
       ...category,
-      count: types.reduce((total, type) => total + type.count, 0),
+      count: buildings.size,
       types,
     };
   });
@@ -1124,14 +1183,23 @@ export function getPlacesByType(specificUse: string): PlaceSearchResult[] {
   return (
     sqlite
       .prepare(`
-        SELECT w.building_id, w.name, w.address, w.district, w.specific_use,
-               w.total_staff_count
-        FROM workplace w
-        JOIN building b ON b.stable_id = w.building_id
-        WHERE w.source_present = 1 AND w.specific_use = ?
-        ORDER BY w.district, w.name, w.building_id
+        SELECT b.stable_id AS building_id,
+               COALESCE(cbo.campaign_name,w.name,b.name,b.stable_id) AS name,
+               b.address, b.district_name AS district,
+               CASE WHEN cbo.subtype = ? THEN cbo.subtype
+                    WHEN cbo.occupant_disposition = 'reference_only' THEN cbo.specific_use
+                    ELSE COALESCE(cbo.specific_use,w.specific_use) END AS specific_use,
+               CASE WHEN cbo.occupant_disposition = 'reference_only' THEN 0
+                    ELSE COALESCE(w.total_staff_count,0) END AS total_staff_count
+        FROM building b
+        LEFT JOIN workplace w ON w.building_id = b.stable_id AND w.source_present = 1
+        LEFT JOIN campaign_building_override cbo ON cbo.building_id = b.stable_id
+        WHERE (w.building_id IS NOT NULL OR cbo.specific_use IS NOT NULL OR cbo.subtype IS NOT NULL)
+          AND ((CASE WHEN cbo.occupant_disposition = 'reference_only' THEN cbo.specific_use
+                     ELSE COALESCE(cbo.specific_use,w.specific_use) END) = ? OR cbo.subtype = ?)
+        ORDER BY b.district_name, name, b.stable_id
       `)
-      .all(specificUse) as Array<{
+      .all(specificUse, specificUse, specificUse) as Array<{
       building_id: string;
       name: string;
       address: string;
@@ -1195,16 +1263,7 @@ export function getDashboardSnapshot(): DashboardSnapshot {
     .filter((item): item is EntityLink => Boolean(item));
   const initialDetail = getEntityDetail("AR-0738");
   if (!initialDetail) throw new Error("The validated AR-0738 vertical slice is missing from the database.");
-  const mapBuildings = Object.fromEntries(
-    (
-      sqlite
-        .prepare("SELECT stable_id, COALESCE(name, stable_id) AS label, address FROM building")
-        .all() as Array<{ stable_id: string; label: string; address: string | null }>
-    ).map((building) => [
-      building.stable_id,
-      { label: building.label, address: building.address },
-    ]),
-  );
+  const mapBuildings = campaignMapLabels(sqlite);
 
   return {
     counts: {

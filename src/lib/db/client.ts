@@ -4,6 +4,7 @@ import path from "node:path";
 import Database from "better-sqlite3";
 import { drizzle } from "drizzle-orm/better-sqlite3";
 import * as schema from "./schema";
+import { ensureCampaignBuildingSchema } from "@/lib/campaign-buildings";
 
 type DatabaseContext = ReturnType<typeof createDatabaseContext>;
 
@@ -16,6 +17,7 @@ function createDatabaseContext() {
   const sqlite = new Database(databasePath);
   sqlite.pragma("foreign_keys = ON");
   sqlite.pragma("journal_mode = WAL");
+  ensureCampaignBuildingSchema(sqlite);
   return {
     sqlite,
     db: drizzle(sqlite, { schema }),

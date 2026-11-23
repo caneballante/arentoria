@@ -217,3 +217,30 @@ export const storyProfiles = sqliteTable("story_profile", {
   createdAt: text("created_at").notNull(),
   updatedAt: text("updated_at").notNull(),
 });
+
+export const campaignBuildingOverrides = sqliteTable("campaign_building_override", {
+  buildingId: text("building_id").primaryKey(),
+  campaignName: text("campaign_name"),
+  primaryUse: text("primary_use"),
+  specificUse: text("specific_use"),
+  subtype: text("subtype"),
+  faith: text("faith"),
+  factionId: text("faction_id"),
+  dmNotes: text("dm_notes"),
+  occupantDisposition: text("occupant_disposition").notNull(),
+  approvalStatus: text("approval_status").notNull(),
+  approvedAt: text("approved_at").notNull(),
+  sourceReason: text("source_reason"),
+  sourceHash: text("source_hash").notNull(),
+  updatedAt: text("updated_at").notNull(),
+});
+
+export const campaignBuildingRevisions = sqliteTable("campaign_building_revision", {
+  id: integer("id").primaryKey(),
+  batchId: text("batch_id").notNull(),
+  buildingId: text("building_id").notNull(),
+  beforeJson: text("before_json"),
+  afterJson: text("after_json"),
+  action: text("action").notNull(),
+  changedAt: text("changed_at").notNull(),
+});

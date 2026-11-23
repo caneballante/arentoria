@@ -149,13 +149,13 @@ describe("prepared source integrity", () => {
     expect(staff).toContain("P-02042");
   });
 
-  it("keeps CSV and workbook reads out of the running application", () => {
+  it("keeps immutable census and source-file reads out of the running application", () => {
     const runtimeFiles = readdirSync(path.join(process.cwd(), "src"), { recursive: true, withFileTypes: true })
       .filter(
         (entry) => entry.isFile() && /\.(?:ts|tsx)$/.test(entry.name) && !entry.name.includes(".test."),
       )
       .map((entry) => readFileSync(path.join(entry.parentPath, entry.name), "utf8"));
-    expect(runtimeFiles.join("\n")).not.toMatch(/full-census|\.csv|\.xlsx|readFile(?:Sync)?\(/i);
+    expect(runtimeFiles.join("\n")).not.toMatch(/full-census|\.csv|readFile(?:Sync)?\(/i);
   });
 
   it("keeps the persistent DM story layer separate from source-owned imports", () => {

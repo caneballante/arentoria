@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { recordRecentView, saveStoryProfile, toggleSessionPin } from "@/app/actions";
 import type {
   DashboardSnapshot,
@@ -819,6 +820,7 @@ export function CityConsole({ snapshot }: { snapshot: DashboardSnapshot }) {
           <button className={`nav-item ${recordMode === "detail" ? "is-active" : ""}`} type="button" title="City map" onClick={() => { setRecordMode("detail"); setMobilePanel("map"); }}><span className="nav-icon">⌖</span><span className="nav-label">City map</span></button>
           <button className="nav-item" type="button" title="Search index" onClick={() => document.querySelector<HTMLInputElement>("#global-search")?.focus()}><span className="nav-icon">⌕</span><span className="nav-label">Search index</span></button>
           <button className={`nav-item ${recordMode === "places" ? "is-active" : ""}`} type="button" title="Browse places" onClick={openPlaceBrowser}><span className="nav-icon">▦</span><span className="nav-label">Browse places</span></button>
+          <Link className="nav-item" href="/campaign-buildings" title="Campaign buildings"><span className="nav-icon">✎</span><span className="nav-label">Campaign buildings</span></Link>
           <button className="nav-item" type="button" title="Tonight's session" onClick={() => sessionDockRef.current?.scrollIntoView({ behavior: "smooth", block: "end" })}><span className="nav-icon">◇</span><span className="nav-label">Tonight&apos;s session</span><b>{pinnedItems.length}</b></button>
         </nav>
 
@@ -1055,6 +1057,25 @@ export function CityConsole({ snapshot }: { snapshot: DashboardSnapshot }) {
               ) : null}
             </section>
 
+            {detail.campaignBuilding ? (
+              <section className="record-section campaign-building-card">
+                <div className="record-section-title"><h3>Approved campaign identity</h3><span>DM canon</span></div>
+                <dl>
+                  {detail.campaignBuilding.primaryUse && <div><dt>Primary use</dt><dd>{detail.campaignBuilding.primaryUse}</dd></div>}
+                  {detail.campaignBuilding.specificUse && <div><dt>Specific use</dt><dd>{detail.campaignBuilding.specificUse}</dd></div>}
+                  {detail.campaignBuilding.subtype && <div><dt>Building subtype</dt><dd>{detail.campaignBuilding.subtype}</dd></div>}
+                  {detail.campaignBuilding.faith && <div><dt>Faith or deity</dt><dd>{detail.campaignBuilding.faith}</dd></div>}
+                  {detail.campaignBuilding.factionId && <div><dt>Faction</dt><dd>{detail.campaignBuilding.factionId}</dd></div>}
+                  <div><dt>Occupants</dt><dd>{({keep: "Existing occupants and staff retained",reference_only: "Source reference only; excluded from this building's campaign view",reassignment_planned: "Reassignment planned; unresolved",manual_resolved: "Manually resolved"} as Record<string,string>)[detail.campaignBuilding.occupantDisposition]}</dd></div>
+                  {detail.campaignBuilding.notes && <div><dt>DM notes</dt><dd>{detail.campaignBuilding.notes}</dd></div>}
+                  {detail.campaignBuilding.sourceReason && <div><dt>Reason</dt><dd>{detail.campaignBuilding.sourceReason}</dd></div>}
+                  <div><dt>Approved</dt><dd>{new Date(detail.campaignBuilding.approvedAt).toLocaleDateString()}</dd></div>
+                </dl>
+                {detail.campaignBuilding.sourceChanged && <p className="campaign-source-warning">The imported building record changed after this override was approved. Review it against the Source Reference below.</p>}
+                <Link href="/campaign-buildings">Review campaign buildings</Link>
+              </section>
+            ) : detail.kind === "building" ? <p className="campaign-no-override">This building uses its imported identity. <Link href="/campaign-buildings">Plan a campaign change</Link></p> : null}
+
             <StoryEditor key={detail.stableId} detail={detail} onSaved={handleStorySaved} />
 
             {detail.prompts.length > 0 ? (
@@ -1107,7 +1128,7 @@ export function CityConsole({ snapshot }: { snapshot: DashboardSnapshot }) {
 
             {detail.fields.length > 0 ? (
               <details className="canonical-details">
-                <summary>Canonical registry fields <span>{detail.fields.length}</span></summary>
+                <summary>{detail.kind === "building" ? "Source Reference" : "Canonical registry fields"} <span>{detail.fields.length}</span></summary>
                 <section className="record-section">
                   <dl>
                     {detail.fields.map((field, index) => <div key={`${field.label}:${index}`}><dt>{field.label}</dt><dd>{field.value}</dd></div>)}

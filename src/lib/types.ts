@@ -94,6 +94,19 @@ export type EntityDetail = {
   related: EntityLink[];
   connections?: PersonConnections;
   notice?: string;
+  campaignBuilding?: {
+    name: string | null;
+    primaryUse: string | null;
+    specificUse: string | null;
+    subtype: string | null;
+    faith: string | null;
+    factionId: string | null;
+    notes: string | null;
+    occupantDisposition: string;
+    approvedAt: string;
+    sourceReason: string | null;
+    sourceChanged: boolean;
+  };
 };
 
 export type SearchResult = {

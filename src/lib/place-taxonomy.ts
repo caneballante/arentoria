@@ -128,7 +128,7 @@ const categoryPatterns: Array<{
       /government office|ministry|bureau/i,
       /guild hall|guild office/i,
       /school|tutoring/i,
-      /temple|chapel/i,
+      /temple|chapel|shrine|monastery/i,
       /college|academy|scholarly institute/i,
       /watch house|gate guard/i,
       /barracks|military administrative/i,
